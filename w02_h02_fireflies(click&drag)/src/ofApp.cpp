@@ -64,7 +64,10 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
+    Lines templines;							// create the ball object
     
+    templines.setup(x,y);	// setup its initial state
+    lines.push_back(templines);
 }
 
 //--------------------------------------------------------------
