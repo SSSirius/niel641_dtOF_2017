@@ -23,8 +23,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
       
         vector<Ball> balls;
-     float timeScale;
-    float xoffs = 0;
-    float yoffs = 0;
+    int count=0;
 
 };
