@@ -14,6 +14,6 @@ public:		// other classes can access the following functions & variables:
     ofVec2f pos1;
     ofVec2f vel;
     ofVec2f pos2;
-    	ofColor color;
+    ofColor color;
     
 };

@@ -42,30 +42,15 @@ void Lines::update(){
 }
 
 void Lines::draw() {
-    
-//    ofColor aqua(0, 252, 255, 150);
-//    ofColor purple(198, 0, 205,200);
-//    //    ofNoFill();
-//    ofColor inbetween = aqua.getLerped(purple, ofRandom(1.0));
-//    ofSetColor(inbetween);
-//    ofDrawCircle(pos, radius);
-    
+
 
         int numLines = 160;
-//        int minRadius = 25;
-//        int maxRadius = 125;
+
         for (int i=0; i<numLines; i++) {
             
-            // Formula for converting from polar to Cartesian coordinates:
-            //    x = cos(polar angle) * (polar distance)
-            //    y = sin(polar angle) * (polar distance)
-            // We need our angle to be in radians if we want to use sin() or cos()
-            // so we can make use of an openFrameworks function to convert from degrees
-            // to radians
-            float angle = ofRandom(ofDegToRad(360.0));
-//            float distance = ofRandom(minRadius, maxRadius);
-//            float xOffset = cos(angle) * radius;
-//            float yOffset = sin(angle) * radius;
+          
+                   float angle = ofRandom(ofDegToRad(360.0));
+
             pos2= ofVec2f(cos(angle) * radius,sin(angle) * radius)+pos1;
             float alpha = ofMap(radius, 25, 35, 5, 0); // Make shorter lines more opaque
             ofSetColor(color, alpha);
