@@ -5,7 +5,8 @@ void ofApp::setup(){
     
     ofSetVerticalSync(true);
     ofSetFrameRate(60);
-    ofBackground(255);
+    ofBackground(0,0,51);
+    bg.load("bg.png");
     
     for (int i = 0; i < 3000; i++){
         particle myParticle;
@@ -28,8 +29,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetColor(0);
-    
+//    ofSetColor(0);
+    bg.draw(0,0, ofGetWidth(), ofGetHeight());
     for (int i = 0; i < particles.size(); i++){
         particles[i].draw();
     }

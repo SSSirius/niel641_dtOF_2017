@@ -5,10 +5,10 @@
 particle::particle(){
     setInitialCondition(0,0,0,0);
     damping =  ofRandom(0.005, 0.01);
-    ofColor black(0, 0, 0, 250);
+    ofColor white(255, 255, 255, 250);
     ofColor gray(150,150, 150,150);
     //    ofNoFill();
-    color = gray.getLerped(black, ofRandom(1.0));
+    color = gray.getLerped(white, ofRandom(1.0));
     drag  = ofRandom(0.95, 0.998);
     attractPoints = NULL;
 }
@@ -68,7 +68,7 @@ void particle::update(){
             if( dist < 150 && dist > 50  ){
                 vel += frc * 0.003;
             }else{
-                 frc.x = ofSignedNoise(uniqueVal, pos.y * 0.01, ofGetElapsedTimef()*0.2);
+                frc.x = ofSignedNoise(uniqueVal, pos.y * 0.01, ofGetElapsedTimef()*0.2);
                 frc.y = ofSignedNoise(uniqueVal, pos.x * 0.01, ofGetElapsedTimef()*0.2);
                 vel += frc * 0.04;
             }

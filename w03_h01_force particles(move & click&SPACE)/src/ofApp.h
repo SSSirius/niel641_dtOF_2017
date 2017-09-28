@@ -23,5 +23,6 @@ class ofApp : public ofBaseApp{
         void resetAttract();
         vector <particle> particles;
         vector <ofPoint> attractPoints;
+       ofImage bg;
    
 };
