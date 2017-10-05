@@ -5,9 +5,9 @@ void Ripple::update(int arr){
     
     acc=acc*0.98;
     prevPos.x = (arr-1)*2;
-    prevPos.y=sin(ofGetElapsedTimef()*10+ofMap(1-arr,0,700,0,80))*ofMap(1-arr,0,-350,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
+    prevPos.y=sin(ofGetElapsedTimef()*10+ofMap(1-arr,0,500,0,40))*ofMap(1-arr,0,-400,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
     pos.x = arr*2;
-    pos.y = sin(ofGetElapsedTimef()*10+ ofMap(-arr,0,700,0,80))*ofMap(-arr,0,-350,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
+    pos.y = sin(ofGetElapsedTimef()*10+ ofMap(-arr,0,500,0,40))*ofMap(-arr,0,-400,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
     
     if (acc<=0.000001){
         acc=0;
@@ -49,7 +49,7 @@ void Ripple::restart(int count,int hi,int x){
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(0);
+    ofBackground(80);
     int nRipples = 700;
     for (int i=0; i<nRipples; i++){
         Ripple ripple;
@@ -132,14 +132,16 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+    if (y < ofGetHeight()/2+100){
     rpos=ofVec2f(x,y);
     rvel = ofVec2f(0,ofRandom(-3,0));
     hi = 100-y+ofGetHeight()/2;
 
     racc = ofVec2f(0,0.2);
     count=0;
-    size=20;
+        size=20;
+        
+    }
 }
 
 //--------------------------------------------------------------
