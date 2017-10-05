@@ -3,13 +3,10 @@
 
 void Ripple::update(int arr){
     
-//    ofVec3f offsetTarget = target + offset;
-//
     acc=acc*0.98;
     prevPos.x = (arr-1)*2;
     prevPos.y=sin(ofGetElapsedTimef()*10+ofMap(1-arr,0,700,0,80))*ofMap(1-arr,0,-350,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
     pos.x = arr*2;
-    //   pos.y = sin(ofGetElapsedTimef()/2 + ofMap(arr,0,200,0,15))* ofMap(arr,0,200,40,10);
     pos.y = sin(ofGetElapsedTimef()*10+ ofMap(-arr,0,700,0,80))*ofMap(-arr,0,-350,hig*0.3,0.001)*acc+ofGetHeight()/2+100;
     
     if (acc<=0.000001){
@@ -49,8 +46,6 @@ void Ripple::restart(int count,int hi,int x){
 
 //--------------------------------------------------------------
 // ofApp definitions:
-//--------------------------------------------------------------
-
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -84,13 +79,11 @@ void ofApp::update(){
         
     }
 
-    
-
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-//  ofTranslate(ofGetMouseX(), ofGetHeight()/2+100);
+
     for(int i=0; i< ripples.size();i++){
         ripples[i].draw();
     }
@@ -139,12 +132,11 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-//    rpos = ofVec2f(0,y-ofGetHeight()/2-100);
+
     rpos=ofVec2f(x,y);
     rvel = ofVec2f(0,ofRandom(-3,0));
     hi = 100-y+ofGetHeight()/2;
-//    rvel.y=-3;
-//    racc.y=0.2;
+
     racc = ofVec2f(0,0.2);
     count=0;
     size=20;
