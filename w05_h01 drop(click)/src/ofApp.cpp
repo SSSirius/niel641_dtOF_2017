@@ -22,7 +22,7 @@ void Ripple::draw(){
     ofSetColor(102,204,255);
     ofFill();
 
-    ofSetLineWidth(1);
+    ofSetLineWidth(3);
     ofDrawLine(prevPos.x+offset,prevPos.y, pos.x+offset,pos.y);
     ofDrawLine(offset-prevPos.x,prevPos.y,offset-pos.x,pos.y);
     
