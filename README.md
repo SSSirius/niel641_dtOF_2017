@@ -27,8 +27,8 @@ Press SPACE to release the particle
 Selt-portrait 
 When the mouse moves, the eyesight eyebrows and facial expressions will change 
 
-
-###WEEK 5###
+---
+### WEEK 5 ###
 
 **Homework 1**
 
