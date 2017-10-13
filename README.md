@@ -26,3 +26,10 @@ Press SPACE to release the particle
 
 Selt-portrait 
 When the mouse moves, the eyesight eyebrows and facial expressions will change 
+
+---
+### WEEK 5 ###
+
+**Homework 1**
+
+simulate the water drop system, click will create a new drop
