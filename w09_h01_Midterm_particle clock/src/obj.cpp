@@ -5,10 +5,10 @@
 particle::particle(){
     setInitialCondition(0,0,0,0);
     damping =  ofRandom(0.005, 0.01);
-    ofColor white(0, 255, 255, 255);
-    ofColor gray(150,0, 150,150);
+    ofColor blue(0, 255, 255, 255);
+    ofColor red(200,0, 150,150);
     //    ofNoFill();
-    color = gray.getLerped(white, ofRandom(1.0));
+    color = red.getLerped(blue, ofRandom(1.0));
     drag  = ofRandom(0.95, 0.998);
     attractPoints = NULL;
     radius=1.5;
@@ -49,7 +49,8 @@ void particle::setInitialCondition(float px, float py, float vx, float vy){
 
 //------------------------------------------------------------
 void particle::update(){
-    
+    ofColor blue(0, 255, 255, 255);
+    ofColor red(200,0, 150,150);
     if( attractPoints ){
         ofPoint closestPt;
         int closest = -1;
@@ -77,6 +78,9 @@ void particle::update(){
                 vel += frc * 0.04;
                
             }
+           
+            //    ofNoFill();
+//            color = red.getLerped(blue, ofMap(dist,0,maxdist/4,0,1));
              radius=ofMap(dist,0,maxdist/4,3,0);
         
         
@@ -85,6 +89,7 @@ void particle::update(){
         ofPoint attractPt(ofGetMouseX(), ofGetMouseY());
         frc = attractPt-pos;
         float dist = frc.length();
+//         color = red.getLerped(blue, ofMap(dist,0,maxdist/4,0,1));
          radius=ofMap(dist,0,maxdist/1.5,3,0);
     }
     }
