@@ -387,7 +387,7 @@ void ofxFaceTracker2::drawMesh(int x, int y, int _w, int _h) const{
 //               cout << instance.getLandmarks().getImagePoint(40) << endl;
             //two eyes middle 39,42
             ofDrawCircle(instance.getLandmarks().getImagePoint(39),3); ofDrawCircle(instance.getLandmarks().getImagePoint(36),3);
-            
+            ofDrawCircle(instance.getLandmarks().getImagePoint(42),3);
            ofDrawCircle(instance.getLandmarks().getImagePoint(2),3); ofDrawCircle(instance.getLandmarks().getImagePoint(14),3);
             
             //mouth boundary 48,54
